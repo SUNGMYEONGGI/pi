@@ -217,11 +217,6 @@ export function truncateTail(content: string, options: TruncationOptions = {}): 
 		outputBytesCount += lineBytes;
 	}
 
-	// If we exited due to line limit
-	if (outputLinesArr.length >= maxLines && outputBytesCount <= maxBytes) {
-		truncatedBy = "lines";
-	}
-
 	const outputContent = outputLinesArr.join("\n");
 	const finalOutputBytes = Buffer.byteLength(outputContent, "utf-8");
 
